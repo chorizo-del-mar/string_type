@@ -17,8 +17,10 @@ String create_string(void) {
 }
 
 void delete_string(String str) {
-	if (str.ptr != NULL)
+	if (str.ptr != NULL) {
 		free(str.ptr);
+		str.ptr = NULL;
+	}
 	str.len = 0;
 }
 
